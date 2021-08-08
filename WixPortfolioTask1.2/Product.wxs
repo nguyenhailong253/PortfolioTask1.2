@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*" Name="Wix walkthrough Portfolio Credit Task 1.2" Language="1033" Version="1.0.0.0" Manufacturer="Hai Long Nguyen" UpgradeCode="7bde2703-61de-4349-a160-a0ed680a42a9">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate EmbedCab="yes" />
+
+		<Feature Id="ProductFeature" Title="WixPortfolioTask1.2" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+		</Feature>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="WixWalkthroughPortfolioCreditTask1.2" />
+			</Directory>
+		</Directory>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+			<!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
+			<!-- <Component Id="ProductComponent"> -->
+				<!-- TODO: Insert files, registry keys, and other resources here. -->
+			<!-- </Component> -->
+      <Component Id="PortfolioTask1.2.exe" Guid="297C229E-ED70-4F7F-A9B3-26AFD763EB47">
+        <File Id="PortfolioTask1.2.exe" Name="PortfolioTask1.2.exe" Source="$(var.PortfolioTask1.2.TargetDir)PortfolioTask1.2.exe"></File>
+      </Component>
+		</ComponentGroup>
+	</Fragment>
+</Wix>
